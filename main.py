@@ -10,7 +10,6 @@ pipe = pickle.load(open("final.pkl", 'rb'))
 @app.route('/')
 def index():
     locations = sorted(data['location'].unique())
-    print(locations)
     return render_template('index.html', locations=locations)
 
 @app.route('/predict', methods=['POST'])
